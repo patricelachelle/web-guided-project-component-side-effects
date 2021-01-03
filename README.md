@@ -19,3 +19,30 @@ all you have to do is run the command `fkill :4000`
 - Run `npm i` to download the project's dependencies listed in the `package.json`.
 - Run `npm run server` to start an API running on `http://localhost:4000`
 - Run `npm start` to compile the React project and serve the page on `http://localhost:1234`.
+
+## Server API Referene
+
+### Base URL
+```
+http://localhost:4000
+```
+
+### Authentication
+
+Include query parameter of `api_key` with your request.
+
+Example:
+```
+GET /friends?api_key=xyz
+```
+
+### Resources
+
+##### Friends
+```
+GET /friends
+```
+#### Friend
+```
+GET /friends/:id
+```
