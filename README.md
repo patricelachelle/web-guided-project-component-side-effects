@@ -31,7 +31,7 @@ http://localhost:4000
 
 ### Authentication
 
-Include query parameter of `api_key` with your request.
+Include query parameter of `api_key` with your request. Otherwise you will get a status `403` error.
 
 Example:
 ```
