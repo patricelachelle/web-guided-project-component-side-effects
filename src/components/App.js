@@ -23,10 +23,9 @@ export default function App() {
   // caused by the first render only. You'll need `useEffect` from React.
   // The effect should consist of a call to the API using axios.
   // On success, set the array of friend objects from the API into state.
-
   useEffect(() => {
-    axios.get(`${BASE_URL}/friends?api=${API_KEY}`)
-    .then(({data}) => console.log(data))
+    axios.get(`${BASE_URL}/friends?api_key=${API_KEY}`)
+    .then(({data}) => setFriends(data))
     .catch(err => console.log('Error getting friends: ', err))
   }, [])
 

@@ -17,14 +17,15 @@ export default function Details(props) {
     const clickHandler = () => console.log('👻')
     document.addEventListener('click', clickHandler)
 
-  // clean up function(runs when componment unmounts)
-  return () => {
-    console.log('Details component unmounted!!!')
-    document.removeEventListener('click', clickHandler)
-  }
-}, [])
-// 👉 TASK 6 - Create a side effect 🥵 that runs after every render.
-useEffect(() => console.log('🥵 - synchronized to all state'))
+    //clean up function (runs when component unmounts)
+    return () => {
+      console.log('Details component unmounted!!!')
+      document.removeEventListener('click', clickHandler)
+    }
+  }, [])
+
+  // 👉 TASK 6 - Create a side effect 🥵 that runs after every render.
+  useEffect(() => console.log('🥵 - synchronized to all state'))
 
   // 👉 TASK 7 - Create a side effect 📲 that runs when a particular variable changes:
   // Whenever props.friendId updates we should trigger a fetch for details of the friend.
@@ -36,7 +37,6 @@ useEffect(() => console.log('🥵 - synchronized to all state'))
     .then(({data}) => setDetails(data))
     .catch(err => console.log('Error getting details: ', err))
   }, [friendId])
-
   return (
     <div className='container'>
       <h2>Details (of friend with id {friendId}):</h2>
